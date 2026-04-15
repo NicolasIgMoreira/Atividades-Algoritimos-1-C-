@@ -1,0 +1,133 @@
+
+/* 📌 Descrição
+  Este programa em C++ verifica o mês de vencimento do IPVA de um veículo com base no número final da placa e informa se o pagamento vence no mês atual.
+O mês de vencimento do IPVA é definido pelo número final da placa:
+1 → Janeiro || 2 → Fevereiro || 3 → Março || 4 → Abril || 5 → Maio || 6 → Junho || 7 → Julho || 8 → Agosto || 9 → Setembro || 0 → Outubro
+Nos meses de Novembro e Dezembro não há vencimento de IPVA */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int mes, final;
+char atual[30], vencimento[30], calendario[30];
+
+int main()
+{
+	printf("Informe o mes atual (1 a 12): ");
+		scanf("%i", &mes);
+	
+	switch(mes)
+	{
+		case 11:
+				printf("\n\nEm Novembro nao vence IPVA\n\n");
+				return 0;
+				break;
+		case 12:
+			printf ("\n\nEm Dezembro nao vence IPVA\n\n");
+				return 0;
+				break;
+	}
+
+	printf("\nInforme o numero finalizador da placa do veiculo (0 a 9): ");
+		scanf("%i", &final);
+		
+		
+		switch(mes)
+		{
+			case 1:
+					sprintf(calendario, "Janeiro");
+				break;
+			case 2:
+					sprintf(calendario, "Fevereiro");
+				break;
+			case 3:
+					sprintf(calendario, "Marco");
+				break;
+			case 4:
+					sprintf(calendario, "Abril");
+				break;
+			case 5:
+					sprintf(calendario, "Maio");
+				break;
+			case 6:
+					sprintf(calendario, "Junho");
+				break;
+			case 7:
+					sprintf(calendario, "Julho");
+				break;
+			case 8:
+					sprintf(calendario, "Agosto");
+				break;
+			case 9:	
+					sprintf(calendario, "Setembro");
+				break;
+			case 0:
+					sprintf(calendario, "Outubro");
+				break;
+			case 10:
+					sprintf(calendario, "Outubro");
+				break;
+			default:	
+				return 0;
+		}
+		
+		switch(final)
+		{
+			case 1:
+				printf("\nIPVA vence em Janeiro\n");
+					sprintf(vencimento, "Janeiro");
+				break;
+			case 2:
+				printf("\nIPVA vence em Feveriro\n");
+					sprintf(vencimento, "Fevereiro");
+				break;
+			case 3:
+				printf("\nIPVA vence em Marco\n");
+					sprintf(vencimento, "Marco");
+				break;
+			case 4:
+				printf("\nIPVA vence em Abril\n");
+					sprintf(vencimento, "Abril");
+				break;
+			case 5:
+				printf("\nIPVA vence em Maio\n");
+					sprintf(vencimento, "Maio");
+				break;
+			case 6:
+				printf("\nIPVA vence em Junho\n");
+					sprintf(vencimento, "Junho");
+				break;
+			case 7:
+				printf("\nIPVA vence em Julho\n");
+					sprintf(vencimento, "Julho");
+				break;
+			case 8:
+				printf("\nIPVA vence em Agosto\n");
+					sprintf(vencimento, "Agosto");
+				break;
+			case 9:
+				printf("\nIPVA vence em Setembro\n");
+					sprintf(vencimento, "Setembro");
+				break;
+			case 0:
+				printf("\nIPVA vence em Outubro\n");
+					sprintf(vencimento, "Outubro");
+				break;
+			default:
+				printf("\nO Final de placa inserido e invalido\n");
+				return 0;
+		}
+
+
+	if(mes == final || (mes == 10 && final == 0))
+	{
+		sprintf(atual, "no mes atual");
+	}
+	else
+	{
+		sprintf(atual, "nos proximos meses");
+	}
+	printf("\nEstamos no mes %s. \nVencimento em %s. \nPortanto vence %s.\n\n\n", calendario, vencimento, atual);
+	
+	system("pause");
+}
