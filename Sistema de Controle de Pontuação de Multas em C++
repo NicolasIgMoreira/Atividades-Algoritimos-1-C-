@@ -1,0 +1,49 @@
+📌 Descrição
+/*  Este programa em C++ simula um sistema simples de controle de pontuação de multas de trânsito.
+O usuário informa a pontuação de 5 multas, e o sistema contabiliza quantas multas de cada tipo foram registradas, além de calcular o total de pontos acumulados.
+O programa aceita apenas os seguintes valores de pontuação:
+2 pontos || 3 pontos || 5 pontos || 7 pontos
+Qualquer outro valor é considerado inválido e não é contabilizado. */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int i, pontos, dois=0, tres=0, cinco=0, sete=0, total=0;
+
+int main()
+{
+	for(i=1; i<=5; i++)
+		{
+			printf("Informe os pontos da multa(2/3/5/7): ");
+			scanf("%i", &pontos);
+			
+			switch(pontos)
+			{
+				case 2:
+					dois++;
+          total = total + pontos;
+					break;
+				case 3:
+					tres++;
+          total = total + pontos;
+					break;
+				case 5:
+					cinco++;
+          total = total + pontos;
+					break;
+				case 7:
+				sete++;
+        total = total + pontos;  
+					break;
+				default:
+					printf("\nPontuacao invalida\n\n");
+			}
+		}
+	
+	printf("\n %i multas de dois pontos", dois);
+	printf("\n %i multas de tres pontos", tres);
+	printf("\n %i multas de cinco pontos", cinco);
+	printf("\n %i multas de sete pontos", sete);
+	printf("\n\nO total de pontos e: %i\n\n", total);
+	system("pause");
+}
