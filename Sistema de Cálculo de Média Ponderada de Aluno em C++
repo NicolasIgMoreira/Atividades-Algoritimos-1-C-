@@ -1,0 +1,46 @@
+📌 Descrição
+/*  Este programa em C++ realiza o cálculo da média final de um aluno com base em três avaliações: prova aberta, prova teste e trabalho em grupo.
+A média é calculada de forma ponderada, considerando diferentes pesos para cada avaliação, e ao final o sistema informa a situação do aluno. 
+📈 Média maior ou igual a 7 → Aprovado
+📊 Média entre 5 e 6.9 → Recuperação
+📉 Média menor que 5 → Reprovado */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+float parcial, testes, trabalho, media;
+char nome[50], situacao[20];
+
+int main()
+{
+	printf("Insira seu nome: ");
+		scanf("%s", nome);
+	printf("\nInforme a nota da prova aberta: ");
+		scanf("%f", &parcial);
+	printf("\nInforme a nota da prova teste: ");
+		scanf("%f", &testes);	
+	printf("\nInforme a nota do trabalho em grupo: ");
+		scanf("%f", &trabalho);
+		
+	media = parcial*0.6 + testes*0.2 + trabalho*0.2;
+	
+	if(media >= 7)
+	{
+		printf("\nAluno Aprovado\n");
+			sprintf(situacao, "Aprovado");
+	}
+	else if(media>5)
+	{
+		printf("\nAluno de Recuperacao\n");
+			sprintf(situacao, "Recuperacao");
+	}
+	else
+	{
+		printf("\nAluno Reprovado\n");
+			sprintf(situacao, "Reprovado");
+	}
+	
+	printf("\n Nota Parcial:  %2.1f.\n Nota Testes:  %2.1f.\n Nota Trabalho:  %2.1f.\n\n Media Final: %2.1f\n Nome do Aluno: %s.\n Situacao do Aluno: %s.\n\n", parcial, testes, trabalho, media, nome, situacao);    
+	
+	system("pause");
+}
