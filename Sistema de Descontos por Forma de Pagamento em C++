@@ -1,0 +1,45 @@
+Descrição:
+  /* Este programa em C++ calcula o valor final de um produto com base na forma de pagamento escolhida pelo usuário.
+O sistema aplica diferentes porcentagens de desconto conforme a opção selecionada, simulando condições comuns de pagamento em compras.
+- Pagamento à vista (1) → 15% de desconto
+- 2 prestações (2) → 10% de desconto
+- 3 prestações ou mais (3) → 5% de desconto
+- Qualquer outra forma → Pagamento inválido */
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+float  valor, desconto, pagar;
+char forma;
+
+int main()
+{
+	printf("Informe o valor do produto desejado: ");
+		scanf("%f", &valor);
+	printf("\nInforme o metodo de pagamento (1/2/3): ");
+		forma = getche();
+		
+	switch(forma)
+	{
+		case '1':
+			desconto = valor * 0.15;
+			break;
+		case '2':
+			desconto = valor * 0.10;
+			break;
+		case '3':
+			desconto = valor * 0.05;
+			break;
+		default:
+			printf("\n\nMetodo depagamento invalido");
+			return 0;
+	}
+	
+	pagar = valor - desconto;
+	
+	printf("\n\n Valor original do produto: %.2f\n Desconto aplicado: %.2f\n Valor com desconto: %.2f\n\n", valor, desconto, pagar);
+	
+	system("pause");
+}
+
